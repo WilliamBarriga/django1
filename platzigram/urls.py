@@ -1,9 +1,8 @@
-from django.http import HttpResponse
+from platzigram import views
 from django.urls import path
 
-def hello_world(request):
-    return HttpResponse('Hello_world!')
-
 urlpatterns = [
-    path('hello-world/', hello_world)
+    path('hello-world/', views.date_time),
+    path('numbers/', views.numbers),
+    path('validation/<str:name>/<int:age>/', views.say_hi)
 ]
